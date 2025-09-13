@@ -17,14 +17,14 @@ const Dashboard = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Modal states
+ 
   const [showAddForm, setShowAddForm] = useState(false);
   const [showEditForm, setShowEditForm] = useState(false);
   const [editingProduct, setEditingProduct] = useState(null);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [productToDelete, setProductToDelete] = useState(null);
 
-  // Fetch products + categories once
+ 
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -41,7 +41,6 @@ const Dashboard = () => {
     fetchData();
   }, []);
 
-  // Client-side filtering
   useEffect(() => {
     let filtered = [...products];
 
@@ -114,7 +113,7 @@ const Dashboard = () => {
           </h1>
 
           <div className="flex items-center gap-4">
-            {/* Category Filter */}
+        
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
@@ -136,7 +135,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Results count */}
+        
         <div className="mb-6">
           <p className="text-gray-600">
             Showing {filteredProducts.length} products
